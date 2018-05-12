@@ -1,0 +1,80 @@
+<ion-view view-title=""  class="player-page bg-full">
+    <ion-nav-buttons side="left">
+        <button class="button  button-clear back-button ion-grid" menu-toggle="left"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <div class="main-head">Programmes
+        </div>
+    </ion-nav-buttons>
+    <ion-content class="player-home  podlists"   ng-controller="programmesController" >
+
+        <button class="button player-button player-responsive top-play" id="audioControl" ng-click="hidebuttonplay()">
+            <img src="./images/play-top.png" ng-show="$root.showplay">
+            <img src="./images/pausetop.png" ng-show="$root.showplayactive">
+        </button>
+        <div class="search-list row">
+            <div class="col col">
+                <label style="border:none;padding: 0px;cursor: pointer;" class="item item-input-inset">
+                    <div class="item-input-wrapper serc">
+                        <i class="icon ion-ios-search"></i>
+                        <select class="search_bar" type="search" ng-model="searchText.acf.location" placeholder="ertyui">
+                            <option value="" disabled selected><i class="ion ion-search"></i>Choose Your Location</option>
+                            <option>United Arab Emirates</option>             
+                            <option>Bahrain</option>
+                            <option>Saudi Arabia</option>
+                            <option>Kuwait</option>
+                            <option>Qatar</option>
+                            <option>Oman</option>             
+                        </select>
+                    </div>
+                </label>
+
+            </div>
+
+        </div>
+
+        <div class="rjlist" ng-repeat="item in programs|filter:searchText">
+            <div class="row rjlists podlist">
+                <div class="col-25 col podcast-img pgmlist-left">
+                    <div class="podbg">
+                        <img ng-show="item.featured_image_urls.podcast_thumb" ng-src="{{item.featured_image_urls.thumbnail}}" class="img-responsive">
+                        <img ng-hide="item.featured_image_urls.news_thumb" src="./images/pod.png" class="img-responsive">
+
+                        <!--<img src="./images/pod.png" class="img-responsive">-->
+                    </div>
+                </div>
+                <div class="col-50 col pgmlist-center ">
+
+                    <div class="rj-list pgmlist-center">
+                        <h4>{{item.title.rendered}}</h4>
+                        <p>{{item.acf.rj_name}}</p>                   
+
+                    </div>
+
+                </div>
+                <div class="col-25 col pgmlist-last">
+                    <p>{{item.acf.time}}</p>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+    </ion-content>
+    <ion-footer-bar align-title="left" ng-controller="AddCtrl">    
+
+
+        <ion-slides  options="options" slider="data.slider">
+            <ion-slide-page  ng-click="goToSlide()">
+                <img src="./images/google-ad.png" class="img-responsive">
+            </ion-slide-page>
+            <ion-slide-page  ng-click="goToSlide()">
+                <img src="./images/ggd.png" class="img-responsive">
+            </ion-slide-page>
+
+        </ion-slides>
+    </ion-footer-bar>
+</ion-view>    
+
