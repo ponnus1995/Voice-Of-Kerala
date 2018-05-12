@@ -1,0 +1,83 @@
+<ion-view view-title="MESSAGE TO RJ"  class="player-page bg-full about-page" style="top: 9px;">
+    <ion-nav-buttons side="left">
+        <button class="button  button-clear back-button ion-grid" menu-toggle="left"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button ion-plus"  ng-click="$root.goToSlide()"></button>
+
+    </ion-nav-buttons>
+
+
+    <ion-content class="player-home" ng-controller="msgtorjController">
+        <!--<button class="button ion-plus"  ng-click="goToSlide1()"></button>-->
+        <button class="button player-button player-responsive top-play" id="audioControl" ng-click="hidebuttonplay()">
+            <img src="./images/play-top.png" ng-show="$root.showplay">
+            <img src="./images/pausetop.png" ng-show="$root.showplayactive">
+        </button>
+        <div class="rjlist" ng-repeat="msg in $root.messages">
+            <div class="row rjlists">
+                <div class="col">
+                    <div class="border-outer">
+                        <div class="rj-list">
+                            <h4>{{msg.title}}</h4>
+                            <p>{{msg.date}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </ion-content>
+    <ion-footer-bar align-title="left" ng-controller="AddCtrl">       
+
+        <ion-slides  options="options" slider="data.slider">
+            <ion-slide-page  ng-click="goToSlide()">
+                <img src="./images/google-ad.png" class="img-responsive">
+            </ion-slide-page>
+            <ion-slide-page  ng-click="goToSlide()">
+                <img src="./images/ggd.png" class="img-responsive">
+            </ion-slide-page>
+
+        </ion-slides>
+        <script id="image-modal1.html" type="text/ng-template">
+            <div class="modal image-modal image-modal-form transparent">
+
+
+            <ion-slide-box on-slide-changed="slideChanged(index)" 
+            show-pager="false" class="form-wrapper msgtorjwrapper">
+            <ion-slide>
+            <form name="myForm" novalidate id="post-submission-form">
+            <div class="compose-mail"> <a href="#" class="mailclose" ng-click="closeModal();"></a><span class="compose">Compose</span>
+            <button tye="submit" ng-disabled="myForm.$invalid" ng-click="submitform(mesg);"> SEND</button>
+            <div class="list">
+            <label class="item item-input item-stacked-label">
+            <span class="input-label">CHOOSE STATION</span>
+            <select ng-model="mesg.location">
+            <option>United Arab Emirates</option>             
+                            <option>Bahrain</option>
+                            <option>Saudi Arabia</option>
+                            <option>Kuwait</option>
+                            <option>Qatar</option>
+                            <option>Oman</option>  
+            </select>
+            </label>               
+            <label class="item item-input item-stacked-label">
+            <span class="input-label">EMAIL ID</span>
+            <input type="text" ng-model="mesg.email" placeholder="john@suhr.com">
+            </label>
+            <label class="item item-input item-stacked-label">
+            <span class="input-label">TYPE YOUR MESSAGE</span>
+            <textarea rows="3" ng-model="mesg.message" placeholder="Type Something"></textarea>
+            </label>
+            </div>
+            </div>
+            </form>
+
+            </ion-slide>
+            </ion-slide-box>
+            </div>
+        </script>
+    </ion-footer-bar>
+</ion-view>    
