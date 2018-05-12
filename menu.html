@@ -1,0 +1,81 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content ng-drag-content="true">
+        <ion-nav-bar class="bar bar-hp" align-title="left">
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear button-light ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+
+
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" class="sidemenucontent">
+        <ion-header-bar class="bar bar-hp-gray">
+            <div class="share-us">
+                <h4>Share Us on</h4>
+            </div>
+            <div class="share-icons">
+                <a href="https://www.facebook.com">
+                    <i class="button ion-icon ion-social-facebook"></i>
+                </a>
+                <a href="https://www.twitter.com">
+                    <i class="button ion-icon ion-social-twitter"></i>
+                </a>
+                <a href="https://plus.google.com/">
+                    <i class="button ion-icon ion-social-googleplus"></i>
+                </a>
+            </div>
+
+
+        </ion-header-bar>
+        <ion-content>
+            <ion-list class="menulist">
+                <ion-item class="hp-menu-item place_intent" menu-close href="#/app/player">
+                    <img src="./images/vok_listen.png">
+                    <span>Listen Live</span>
+
+                </ion-item>
+                <ion-item class="hp-menu-item place_intent" menu-close href="#/app/msgtorj">
+                    <img src="./images/vok_message.png">
+                    <span> Message RJ</span>
+
+                </ion-item>
+                <ion-item class="hp-menu-item intent_status" menu-close href="#/app/podcast">
+                    <img src="./images/vok_podcast.png">   <span>  Podcast</span>
+                </ion-item>
+                <ion-item class="hp-menu-item track_transport" menu-close href="#/app/programmes">
+
+                    <img src="./images/vok_programs.png">  <span> Programmes</span>
+
+                </ion-item>
+                <ion-item class="hp-menu-item contact_icon" menu-close href="#/app/newslist">
+
+                    <img src="./images/vok_news.png">  <span> News</span>
+                </ion-item>
+                <ion-item class="hp-menu-item settings_icon" menu-close href="https://play.google.com/store/apps/details?id=com.vok.radio">
+                    <i class="button ion-icon ion-ios-star-outline"></i>  <span>  Rate Us</span>
+
+                </ion-item>
+                <ion-item class="hp-menu-item settings_icon" menu-close href="#/app/about">
+                    <img src="./images/vok_about.png">  <span> About Us</span>
+
+                </ion-item>
+                <ion-item class="hp-menu-item settings_icon" menu-close href="https://www.youtube.com/">
+                    <img src="./images/video.png">  <span>  Videos</span>
+
+                </ion-item>
+
+                <ion-item class="hp-menu-item settings_icon" menu-close href="https://www.instagram.com/">
+                    <img src="./images/img.png">  <span>  Images</span>
+
+                </ion-item>
+
+
+            </ion-list>
+            <!--<div style="text-align: center;float: left;clear: both;" class="copy">  <span class="copy-right">Copyrighte © 2016 . All rights reserved</span></div>-->
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
+
+
